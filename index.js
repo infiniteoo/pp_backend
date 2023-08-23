@@ -1,5 +1,5 @@
 const express = require("express");
-const createTemplate = require("./create-template.jsx");
+const createTemplate = require("./manual-template.jsx");
 const pasteTemplate = require("./pasted-template.jsx");
 const cors = require("cors");
 

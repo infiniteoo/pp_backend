@@ -1,5 +1,6 @@
 const express = require("express");
 const createTemplate = require("./create-template.jsx");
+const pasteTemplate = require("./pasted-template.jsx");
 const cors = require("cors");
 
 const app = express();
@@ -20,6 +21,21 @@ app.post("/api/stops", async (req, res) => {
     try {
         
         const result = await createTemplate(req.body);
+        res.setHeader("Content-Type", "application/pdf");
+        res.setHeader("Content-Disposition", "attachment; filename=export.pdf");
+        result.pipe(res);
+    } catch (error) {
+        console.error("Error generating and sending PDF:", error);
+        res.status(500).send("Error generating and sending PDF");
+    }
+});
+app.post("/api/copypasta", async (req, res) => {
+    try {
+        console.log('req.body', req.body)    
+        const result = await pasteTemplate(req.body);
+    
+        
+        
         res.setHeader("Content-Type", "application/pdf");
         res.setHeader("Content-Disposition", "attachment; filename=export.pdf");
         result.pipe(res);

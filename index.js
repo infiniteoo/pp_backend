@@ -2,7 +2,7 @@ const express = require("express");
 const createTemplate = require("./create-template.jsx");
 
 const app = express();
-const port = 8000;
+const port = 8122;
 
 // Enable CORS for all routes
 app.use((req, res, next) => {

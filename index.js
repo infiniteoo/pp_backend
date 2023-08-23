@@ -1,5 +1,6 @@
 const express = require("express");
 const createTemplate = require("./create-template.jsx");
+const cors = require("cors");
 
 const app = express();
 const port = 8122;
@@ -12,6 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/api/stops", async (req, res) => {

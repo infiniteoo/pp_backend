@@ -7,7 +7,7 @@ const PDF = ({ data }) => {
   const pages = [];
 
   data.forEach((item, index) => {
-    for (let i = 0; i < item.numberofpallets; i++) {
+    for (let i = 0; i < item.numberOfPallets; i++) {
 
         const splitStoreName = parseStoreInfo(item.storeName);
         

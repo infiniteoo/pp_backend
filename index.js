@@ -31,7 +31,7 @@ app.post("/api/stops", async (req, res) => {
 });
 app.post("/api/copypasta", async (req, res) => {
     try {
-        console.log('req.body', req.body)    
+           
         const result = await pasteTemplate(req.body);
     
         

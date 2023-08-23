@@ -7,10 +7,10 @@ const parseStoreInfo = require("./storeNameSplitter");
 
 
 const PDF = ({ data }) => {
-  console.log("data in PDF generation: " + JSON.stringify(data));
+  
   /* reverse the order of the data array */
   data.reverse();
-  console.log('reversed data: ' + JSON.stringify(data));
+  
 
   const pages = [];
 
@@ -19,7 +19,7 @@ const PDF = ({ data }) => {
     for (let i = 0; i < item.numberOfPallets; i++) {
 
       const splitStoreName = parseStoreInfo(item.storeName);
-      console.log("SPLIT STORE NAME: ",splitStoreName)
+      
       
       pages.push(
         React.createElement(

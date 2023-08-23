@@ -2,83 +2,169 @@ const ReactPDF = require("@react-pdf/renderer");
 
 const styles = ReactPDF.StyleSheet.create({
   page: {
-    backgroundColor: "#E4E4E4",
+    fontFamily: "Helvetica",
+
+    border: 4, // Add border
+    borderColor: "red",
+    borderStyle: "dotted",
+    borderRadius: 5,
+  },
+  container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     flexDirection: "column",
+    justifyContent: "space-between",
+    display: "flex",
   },
-  section: {
-    margin: 10,
-    padding: 10,
-    textAlign: "center",
+  dairyContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
-  heading: {
-    fontSize: 36, // Increased font size
-    fontWeight: 600,
-    color: "#131925",
-    marginBottom: 16, // Increased margin
-    textTransform: "uppercase", // Capitalize text
-    textAlign: "center", // Center align text
-  },
-  statement: {
-    fontSize: 70, // Increased font size
-    color: "#131925",
-    lineHeight: 1.6, // Adjusted line height
-    marginBottom: 8, // Increased margin
-    textAlign: "center", // Center align text\
-    /* background collor to be bright yellow */
-    backgroundColor: "#FFD700",
-  },
-  highlighted: {
-    backgroundColor: "#FFD700", // Highlight color
-    padding: 4,
-  },
-  divider: {
-    width: "80%", // Adjusted width
-    height: 1,
-    backgroundColor: "#999999",
-    marginVertical: 24,
-  },
-  paragraph: {
-    fontSize: 45, // Increased font size
-    color: "#212935",
-    lineHeight: 1.5, // Adjusted line height
-    textTransform: "uppercase", // Capitalize text
-    textAlign: "center", // Center align text
-  },
-  columnParent: {
+  topContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginLeft: 15,
+    marginRight: 15,
+    marginTop: 15,
   },
-  columnStart: {
-    flex: 1,
-  },
-  columnEnd: {
-    flex: 1,
-    alignItems: "flex-end",
-  },
+  middleHolder: {
+    
+    justifyContent: "space-evenly",
+    
+    
 
 
-  headerContainer: {
-    marginBottom: 24, // Add margin to separate header from other content
-    alignItems: "center", // Center align content horizontally
   },
-  /* center image and make it look natural */
-  image: {
-    maxWidth: 250,
-    height: "auto",
-    marginRight: 16,
-    marginTop: 16,
 
-    marginBottom: 16, // Add spacing below the image
+  emptySpace: {
+    height: "15%",
+
+
   },
-  storeName: {
-    fontSize: 56, // Adjust font size
-    fontWeight: "bold", // Set font weight to bold
-    color: "#131925",
+
+  middleContainer: {
+    flexDirection: "row",
+    
+    alignItems: "stretch",
+    paddingRight: 20,
+  },
+  customer: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "black",
+    marginBottom: 5,
+    marginLeft: 20,
+    // center text
+    textAlign: "center",
+  },
+  paragraph: {
+    fontSize: 35,
+    color: "grey",
+
+    // center text
+  },
+
+  dateText: {
+    fontSize: 13,
+    fontWeight: "bold",
+    color: "gray",
+    textAlign: "right",
+  },
+  customerText: {
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "gray",
+    textAlign: "left",
+    justifyContent: "start",
     textTransform: "uppercase",
+  },
+  customerName: {
+    fontSize: 45,
+    fontWeight: "bold",
+    color: "black",
+    marginBottom: 5,
+    marginLeft: 20,
+    // center text
+    textAlign: "center",
+    textTransform: "uppercase",
+  },
+  newColumn: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "flex-end",
+    marginLeft: 20, // Adjust this value as needed
+    display: "flex", // Add this property to enable flex layout
+    justifyContent: "space-between", // Space out evenly
+  },
+  newRow: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-end",
+    marginLeft: 20, // Adjust this value as needed
+    display: "flex", // Add this property to enable flex layout
+    justifyContent: "space-between", // Space out evenly
+  },
+  dairyImage: {
+    height: "50%",
+    
+  },
+  dairyText: {
+    fontSize: 18,
+    
+    color: "grey",
+    textAlign: "center",
+    justifyContent: "start",
+    
+  },
+
+  image: {
+    width: "20%",
+    height: "auto",
+  },
+  topTextContainer: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  topText: {
+    fontSize: 24,
+    color: "black",
+    marginBottom: 5,
+    marginLeft: 20,
+    fontWeight: "bold",
+    // center text
+    textAlign: "left",
+  },
+  divider: {
+    height: 2,
+    backgroundColor: "gray",
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  infoContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 20,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "gray",
+    marginRight: 5,
+    width: "30%",
+  },
+  value: {
+    fontSize: 14,
+    width: "70%",
+  },
+  bottomContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 8,
+  },
+  bottomText: {
+    fontSize: 14,
   },
 });
 

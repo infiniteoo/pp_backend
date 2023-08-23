@@ -22,9 +22,6 @@ function parseStoreInfo(inputString) {
   };
 }
 
-// Example usage
-const inputString = "501098 - COSTCO RIVERTON 1441";
-const parsedInfo = parseStoreInfo(inputString);
-console.log(parsedInfo);
+
 
 module.exports = parseStoreInfo;

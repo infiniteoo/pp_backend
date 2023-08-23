@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const app = express();
 const port = 8122;
+app.use(cors());
 
 // Enable CORS for all routes
 app.use((req, res, next) => {
@@ -14,7 +15,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(cors());
+
 app.use(express.json());
 
 app.post("/api/stops", async (req, res) => {

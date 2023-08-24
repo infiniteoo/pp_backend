@@ -8,9 +8,8 @@ const PDF = ({ data }) => {
 
   data.forEach((item, index) => {
     for (let i = 0; i < item.numberOfPallets; i++) {
+      const splitStoreName = parseStoreInfo(item.storeName);
 
-        const splitStoreName = parseStoreInfo(item.storeName);
-        
       pages.push(
         React.createElement(
           ReactPDF.Page,
@@ -24,37 +23,37 @@ const PDF = ({ data }) => {
 
             // new row
             React.createElement(
+              ReactPDF.View,
+              { style: styles.topContainer },
+              React.createElement(ReactPDF.Image, {
+                style: styles.image,
+                src: "GXO_logo.png",
+              }),
+
+              React.createElement(
+                ReactPDF.Text,
+                { style: styles.topText },
+
+                "BOISE - GXO LOGISTICS"
+              ),
+              // next two elements in a row
+
+              React.createElement(
                 ReactPDF.View,
-                { style: styles.topContainer },
-                React.createElement(ReactPDF.Image, {
-                  style: styles.image,
-                  src: "GXO_logo.png",
-                }),
-  
+                { style: styles.newColumn },
+
                 React.createElement(
                   ReactPDF.Text,
-                  { style: styles.topText },
-  
-                  "BOISE - GXO LOGISTICS"
+                  { style: styles.dateText },
+                  "Pick Up Date: ??/??"
                 ),
-                // next two elements in a row
-  
                 React.createElement(
-                  ReactPDF.View,
-                  { style: styles.newColumn },
-  
-                  React.createElement(
-                    ReactPDF.Text,
-                    { style: styles.dateText },
-                    "Pick Up Date: ??/??"
-                  ),
-                  React.createElement(
-                    ReactPDF.Text,
-                    { style: styles.dateText },
-                    "Due Date: ??/??" 
-                  )
+                  ReactPDF.Text,
+                  { style: styles.dateText },
+                  "Due Date: ??/??"
                 )
-              ),
+              )
+            ),
             React.createElement(
               ReactPDF.View,
               { style: styles.dairyContainer },
@@ -65,7 +64,6 @@ const PDF = ({ data }) => {
               })
             ),
 
-          
             React.createElement(
               ReactPDF.View,
               { style: styles.middleHolder },
@@ -194,7 +192,6 @@ const PDF = ({ data }) => {
                 ReactPDF.Text,
                 { style: styles.paragraph },
                 "Delivery " + (index + 1) + " of " + data.length
-
               )
             )
           )

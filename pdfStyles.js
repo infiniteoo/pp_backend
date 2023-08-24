@@ -29,23 +29,16 @@ const styles = ReactPDF.StyleSheet.create({
     marginTop: 15,
   },
   middleHolder: {
-    
     justifyContent: "space-evenly",
-    
-    
-
-
   },
 
   emptySpace: {
     height: "15%",
-
-
   },
 
   middleContainer: {
     flexDirection: "row",
-    
+
     alignItems: "stretch",
     paddingRight: 20,
   },
@@ -107,15 +100,13 @@ const styles = ReactPDF.StyleSheet.create({
   },
   dairyImage: {
     height: "50%",
-    
   },
   dairyText: {
     fontSize: 18,
-    
+
     color: "grey",
     textAlign: "center",
     justifyContent: "start",
-    
   },
 
   image: {
@@ -133,7 +124,7 @@ const styles = ReactPDF.StyleSheet.create({
     marginBottom: 5,
     marginLeft: 20,
     fontWeight: "bold",
-    // center text
+    
     textAlign: "left",
   },
   divider: {

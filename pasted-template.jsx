@@ -61,7 +61,6 @@ const PDF = ({ data }) => {
               })
             ),
 
-          
             React.createElement(
               ReactPDF.View,
               { style: styles.middleHolder },

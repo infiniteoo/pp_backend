@@ -22,6 +22,4 @@ function parseStoreInfo(inputString) {
   };
 }
 
-
-
 module.exports = parseStoreInfo;

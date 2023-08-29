@@ -100,6 +100,7 @@ const styles = ReactPDF.StyleSheet.create({
   },
   dairyImage: {
     height: "50%",
+    marginTop: 15
   },
   dairyText: {
     fontSize: 18,
@@ -122,9 +123,9 @@ const styles = ReactPDF.StyleSheet.create({
     fontSize: 24,
     color: "black",
     marginBottom: 5,
-    marginLeft: 20,
-    fontWeight: "bold",
     
+    fontWeight: "bold",
+
     textAlign: "left",
   },
   divider: {

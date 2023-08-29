@@ -3,6 +3,8 @@ const React = require("react");
 const styles = require("./pdfStyles");
 
 const PDF = ({ data }) => {
+
+  console.log('data', data);
   const pages = [];
 
   data.forEach((item, index) => {
@@ -22,10 +24,7 @@ const PDF = ({ data }) => {
             React.createElement(
               ReactPDF.View,
               { style: styles.topContainer },
-              React.createElement(ReactPDF.Image, {
-                style: styles.image,
-                src: "GXO_logo.png",
-              }),
+             
 
               React.createElement(
                 ReactPDF.Text,
@@ -57,7 +56,7 @@ const PDF = ({ data }) => {
               // new column
               React.createElement(ReactPDF.Image, {
                 style: styles.dairyImage,
-                src: "darigold_logo.png",
+                src: "GXO_logo.png",
               })
             ),
 

@@ -1,13 +1,16 @@
 const ReactPDF = require("@react-pdf/renderer");
 const React = require("react");
 const styles = require("./pdfStyles");
+const costcoStoreName = require("./costcoStoreName");
 
 const PDF = ({ data }) => {
-
-  console.log('data', data);
+  console.log("data", data);
   const pages = [];
 
   data.forEach((item, index) => {
+    console.log('item.customer', item.customer)
+    let splitStoreName = costcoStoreName(item.customer);
+
     for (let i = 0; i < item.numberofpallets; i++) {
       pages.push(
         React.createElement(
@@ -24,7 +27,6 @@ const PDF = ({ data }) => {
             React.createElement(
               ReactPDF.View,
               { style: styles.topContainer },
-             
 
               React.createElement(
                 ReactPDF.Text,
@@ -75,11 +77,23 @@ const PDF = ({ data }) => {
                     { style: styles.customerText },
                     "Customer: "
                   ),
+                 /*  React.createElement(
+                    ReactPDF.Text,
+                    { style: styles.customerName },
+
+                    splitStoreName.storeName
+                  ), */
                   React.createElement(
                     ReactPDF.Text,
                     { style: styles.customerName },
 
-                    item.customer
+                    splitStoreName.storeNameAndNumber
+                  ),
+                  React.createElement(
+                    ReactPDF.Text,
+                    { style: styles.customerName },
+
+                    splitStoreName.storeCity
                   )
                 )
                 // new row

@@ -186,7 +186,7 @@ const PDF = ({ data }) => {
               React.createElement(
                 ReactPDF.Text,
                 { style: styles.paragraph },
-                "Pallet " + (i + 1) + " of " + item.numberOfPallets
+                /* "Pallet " + (i + 1) + " of " + item.numberOfPallets */
               ),
               React.createElement(
                 ReactPDF.Text,

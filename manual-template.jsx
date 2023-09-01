@@ -185,20 +185,23 @@ const PDF = ({ data }) => {
 
               React.createElement(
                 ReactPDF.Text,
-                { style: styles.paragraph },
+                { style: styles.paragraph }
                 /* "Pallet " + (i + 1) + " of " + item.numberOfPallets */
               ),
-              React.createElement(
-                ReactPDF.Text,
-                { style: styles.paragraph },
-               /*  "Delivery " + (index + 1) + " of " + data.length */
-              )
+              data.length > 1
+                ? React.createElement(
+                    ReactPDF.Text,
+                    { style: styles.paragraph },
+                    "DELIVERY #" + (index + 1)
+                  )
+                : null
             )
           )
         )
       );
     }
   });
+
   return React.createElement(ReactPDF.Document, null, pages);
 };
 

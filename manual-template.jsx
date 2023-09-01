@@ -6,6 +6,8 @@ const parseStoreInfo = require("./storeNameSplitter");
 const PDF = ({ data }) => {
   const pages = [];
 
+  console.log("data", data.length);
+
   data.forEach((item, index) => {
     for (let i = 0; i < item.numberOfPallets; i++) {
       const splitStoreName = parseStoreInfo(item.storeName);
@@ -188,6 +190,7 @@ const PDF = ({ data }) => {
                 { style: styles.paragraph }
                 /* "Pallet " + (i + 1) + " of " + item.numberOfPallets */
               ),
+
               data.length > 1
                 ? React.createElement(
                     ReactPDF.Text,
@@ -201,7 +204,6 @@ const PDF = ({ data }) => {
       );
     }
   });
-
   return React.createElement(ReactPDF.Document, null, pages);
 };
 

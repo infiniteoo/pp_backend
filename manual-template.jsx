@@ -191,7 +191,7 @@ const PDF = ({ data }) => {
               React.createElement(
                 ReactPDF.Text,
                 { style: styles.paragraph },
-                "Delivery " + (index + 1) + " of " + data.length
+               /*  "Delivery " + (index + 1) + " of " + data.length */
               )
             )
           )

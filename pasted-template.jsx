@@ -8,7 +8,7 @@ const PDF = ({ data }) => {
   const pages = [];
 
   data.forEach((item, index) => {
-    console.log('item.customer', item.customer)
+    console.log("item.customer", item.customer);
     let splitStoreName = costcoStoreName(item.customer);
 
     for (let i = 0; i < item.numberofpallets; i++) {
@@ -77,7 +77,7 @@ const PDF = ({ data }) => {
                     { style: styles.customerText },
                     "Customer: "
                   ),
-                 /*  React.createElement(
+                  /*  React.createElement(
                     ReactPDF.Text,
                     { style: styles.customerName },
 
@@ -195,13 +195,13 @@ const PDF = ({ data }) => {
 
               React.createElement(
                 ReactPDF.Text,
-                { style: styles.paragraph },
-                "Pallet " + (i + 1) + " of " + item.numberofpallets
+                { style: styles.paragraph }
+                /* "Pallet " + (i + 1) + " of " + item.numberofpallets */
               ),
               React.createElement(
                 ReactPDF.Text,
                 { style: styles.paragraph },
-                "Delivery #" + item.deliverysequence
+                "DELIVERY #" + item.deliverysequence
               )
             )
           )

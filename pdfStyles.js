@@ -152,7 +152,7 @@ const styles = ReactPDF.StyleSheet.create({
   },
   bottomContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     padding: 8,
   },
   bottomText: {
